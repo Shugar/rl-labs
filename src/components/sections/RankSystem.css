@@ -1,0 +1,92 @@
+.rank-system {
+  padding: 26px max(36px, calc((100vw - var(--max)) / 2)) 46px;
+  color: var(--white);
+  border-top: 1px solid var(--line-dark);
+  background: #090c13;
+}
+
+.section-kicker {
+  display: flex;
+  justify-content: space-between;
+  color: #6f7681;
+  font-family: var(--display);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.rank-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 16px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.rank-track-line {
+  position: absolute;
+  top: 29px;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(90deg, #8a512f, #707781, #e2a923, #24b7b6, #3896d3, #8447c5, #c72f43, #e7f1ef);
+  opacity: 0.48;
+}
+
+.rank-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: #737b87;
+  font-family: var(--display);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.rank-step:hover {
+  color: var(--white);
+  transform: translateY(-4px);
+}
+
+.rank-step {
+  transition-delay: calc(var(--rank-index) * 55ms);
+}
+
+/* Esports broadcast pass */
+.rank-system {
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(255, 92, 36, 0.05), transparent 25%, transparent 75%, rgba(71, 157, 255, 0.05)),
+    #090c13;
+}
+
+.rank-step > span:last-child,
+.section-kicker {
+  font-family: var(--arena);
+  font-size: 10px;
+}
+
+@media (max-width: 960px) {
+  .rank-system {
+    padding-inline: 28px;
+    overflow-x: auto;
+  }
+
+  .rank-track {
+    min-width: 790px;
+  }
+}
+
+@media (max-width: 680px) {
+  .rank-system {
+    padding-inline: 18px;
+  }
+}

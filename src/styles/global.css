@@ -1,0 +1,658 @@
+/* ==========================================================================
+   GLOBAL LAYER — tokens, reset, typography, and primitives shared by more
+   than one section. Loaded FIRST (imported in main.tsx).
+
+   Cascade contract: section styles live next to their component
+   (src/components/sections/<Name>.css) and load after this file, so they can
+   override anything here. Only put a rule in this file if its selector is
+   used by two or more sections.
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;
+  font-family: "Manrope Variable", "Manrope", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #07090f;
+  --ink-soft: #0d111b;
+  --ink-panel: #111623;
+  --paper: #efeee8;
+  --paper-soft: #e4e2d8;
+  --white: #f7f6f0;
+  --muted: #9ca2af;
+  --orange: #ff5c24;
+  --orange-bright: #ff7a36;
+  --blue: #52b8ff;
+  --lime: #d8ff4f;
+  --line-dark: rgba(255, 255, 255, 0.12);
+  --line-paper: rgba(7, 9, 15, 0.17);
+  --display: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  --arena: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --max: 1440px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+button,
+a {
+  font-family: "Manrope Variable", "Manrope", sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+}
+
+::selection {
+  color: var(--ink);
+  background: var(--lime);
+}
+
+.site-shell {
+  overflow: clip;
+}
+
+/* Brand (Topbar + Footer) */
+.brand {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+}
+
+.brand-orbit {
+  position: absolute;
+  inset: 1px;
+  border: 2px solid var(--orange);
+  border-right-color: transparent;
+  border-radius: 50%;
+  transform: rotate(-28deg);
+}
+
+.brand-orbit::after {
+  content: "";
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 12px var(--orange);
+}
+
+.brand-core {
+  width: 7px;
+  height: 7px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+}
+
+.brand-type {
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 720;
+  letter-spacing: 0.11em;
+}
+
+.brand-type span {
+  color: var(--orange);
+}
+
+/* Arrow icon */
+.arrow {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 180ms ease;
+}
+
+a:hover .arrow,
+button:hover .arrow {
+  transform: translateX(3px);
+}
+
+.arrow-down {
+  transform: rotate(90deg);
+}
+
+a:hover .arrow-down {
+  transform: rotate(90deg) translateX(3px);
+}
+
+/* Shared section scaffolding */
+.hero::after,
+.final-cta::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 9, 15, 0.7), transparent 55%, rgba(7, 9, 15, 0.25));
+  pointer-events: none;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 28px;
+  color: #b9bec8;
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  color: var(--orange);
+  font-size: 8px;
+  text-shadow: 0 0 10px var(--orange);
+}
+
+.dark-eyebrow {
+  color: #5e6268;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+}
+
+h1,
+h2 {
+  font-family: var(--arena);
+}
+
+h1 em,
+h2 em {
+  color: var(--orange);
+  font-style: normal;
+  font-weight: 520;
+}
+
+.kinetic-title-line {
+  width: fit-content;
+  max-width: 100%;
+  display: block;
+}
+
+/* Actions + buttons */
+.hero-actions,
+.cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.text-link,
+.inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.text-link {
+  color: #d7d9df;
+}
+
+.play-dot {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  padding-left: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: var(--orange);
+  font-size: 7px;
+}
+
+.micro-label,
+.system-label {
+  display: block;
+  color: #7f8795;
+  font-family: var(--display);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Rank icon (Hero, RankSystem, FinalCta) */
+.rank-icon {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.rank-icon::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 19%;
+  border-radius: 50%;
+  background: var(--rank-glow, #6e7785);
+  filter: blur(16px);
+  opacity: 0.65;
+}
+
+.rank-icon img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.4));
+}
+
+.rank-fallback {
+  position: absolute;
+  z-index: 1;
+  inset: 7px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px 8px 14px 14px;
+  color: var(--white);
+  font-family: var(--display);
+  font-size: 9px;
+  font-weight: 800;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.rank-image-failed .rank-fallback {
+  opacity: 1;
+}
+
+.rank-bronze { --rank-glow: #c2744c; }
+.rank-silver { --rank-glow: #c9d1d9; }
+.rank-gold { --rank-glow: #ffc638; }
+.rank-platinum { --rank-glow: #26d6d0; }
+.rank-diamond { --rank-glow: #3bb7ff; }
+.rank-champion { --rank-glow: #9a48ff; }
+.rank-grand-champion { --rank-glow: #ff3b54; }
+.rank-ssl { --rank-glow: #f1fffa; }
+
+/* Section layout shells */
+.section-pad {
+  padding: 150px max(36px, calc((100vw - var(--max)) / 2));
+}
+
+.problem-section,
+.coach-section,
+.programs-section,
+.proof-section,
+.faq-section {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.problem-intro h2,
+.section-heading h2,
+.coach-copy h2,
+.proof-heading h2,
+.faq-heading h2,
+.fit-heading h2,
+.cta-content h2 {
+  margin: 0;
+  font-size: clamp(50px, 6.2vw, 94px);
+  font-weight: 570;
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+.method-section,
+.fit-section {
+  color: var(--white);
+  background: var(--ink);
+}
+
+.section-heading,
+.proof-heading {
+  display: grid;
+  grid-template-columns: 1.25fr minmax(280px, 0.55fr);
+  gap: 90px;
+  align-items: end;
+}
+
+.section-heading > p,
+.proof-heading > p {
+  max-width: 490px;
+  margin: 0 0 8px;
+  color: #5a5e64;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.light-heading > p {
+  color: #999fab;
+}
+
+/* Tabs (MethodSection + FitSection) */
+.method-tabs,
+.fit-tabs {
+  display: grid;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.method-tabs button,
+.fit-tabs button {
+  position: relative;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 24px;
+  color: #727986;
+  border: 0;
+  border-right: 1px solid var(--line-dark);
+  background: transparent;
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.method-tabs button:last-child,
+.fit-tabs button:last-child {
+  border-right: 0;
+}
+
+.method-tabs button span,
+.fit-tabs button span {
+  color: #4d5360;
+  font-size: 9px;
+}
+
+.method-tabs button::after,
+.fit-tabs button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -1px;
+  height: 2px;
+  background: var(--orange);
+  transition: right 260ms ease;
+}
+
+.method-tabs button.active,
+.fit-tabs button.active {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.method-tabs button.active::after,
+.fit-tabs button.active::after {
+  right: 0;
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.inline-link {
+  width: max-content;
+  padding-bottom: 5px;
+  border-bottom: 1px solid currentColor;
+}
+
+.price-tag {
+  margin-left: 2px;
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+/* Reveal-on-scroll (driven by the observer in App.tsx) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 680ms cubic-bezier(.2, .7, .2, 1), transform 680ms cubic-bezier(.2, .7, .2, 1);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Esports broadcast pass — shared rules */
+.topbar-status i,
+.verdict-status i,
+.plan-head p i {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 10px rgba(216, 255, 79, 0.78);
+}
+
+.hero::before,
+.method-section::before,
+.fit-section::before,
+.final-cta::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  opacity: 0.09;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgba(255, 255, 255, 0.06) 4px
+  );
+  pointer-events: none;
+}
+
+.problem-intro h2,
+.section-heading h2,
+.coach-copy h2,
+.proof-heading h2,
+.faq-heading h2,
+.fit-heading h2,
+.cta-content h2 {
+  font-weight: 600;
+  line-height: 0.82;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+
+.method-section,
+.fit-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.method-tabs button,
+.fit-tabs button {
+  font-family: var(--arena);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.plan-price strong,
+.fit-stat strong {
+  font-family: var(--arena);
+  font-weight: 600;
+}
+
+/* Shared responsive rules */
+@media (max-width: 960px) {
+  .section-pad {
+    padding: 110px 28px;
+  }
+
+  .problem-layout,
+  .section-heading,
+  .proof-heading,
+  .coach-grid,
+  .faq-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading,
+  .proof-heading {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 680px) {
+  .brand-type {
+    font-size: 14px;
+  }
+
+  .brand-mark {
+    width: 24px;
+    height: 24px;
+  }
+
+  .topbar .brand,
+  .text-link,
+  .inline-link,
+  .coach-links a {
+    min-height: 44px;
+  }
+
+  .hero-actions,
+  .cta-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .hero-actions .button,
+  .cta-actions .button {
+    width: 100%;
+  }
+
+  .text-link {
+    width: max-content;
+  }
+
+  .section-pad {
+    padding: 84px 18px;
+  }
+
+  .problem-intro h2,
+  .section-heading h2,
+  .coach-copy h2,
+  .proof-heading h2,
+  .fit-heading h2 {
+    font-size: clamp(43px, 14vw, 66px);
+  }
+
+  .method-tabs button,
+  .fit-tabs button {
+    height: 64px;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 10px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 360px) {
+  .problem-intro h2,
+  .section-heading h2,
+  .coach-copy h2,
+  .proof-heading h2,
+  .faq-heading h2,
+  .fit-heading h2 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 680px) {
+  .method-tabs button,
+  .fit-tabs button {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

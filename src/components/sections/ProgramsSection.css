@@ -1,0 +1,221 @@
+.programs-section {
+  border-top: 1px solid var(--line-paper);
+}
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 96px;
+}
+
+.plan-card {
+  position: relative;
+  min-height: 660px;
+  display: flex;
+  flex-direction: column;
+  padding: 34px;
+  border: 1px solid rgba(7, 9, 15, 0.33);
+  background: var(--paper);
+}
+
+.plan-card.featured {
+  color: var(--white);
+  background: var(--ink);
+  border-color: var(--ink);
+  box-shadow: 0 22px 70px rgba(7, 9, 15, 0.12);
+  transform: translateY(-18px);
+}
+
+.featured-flag {
+  position: absolute;
+  top: -31px;
+  left: -1px;
+  right: -1px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  padding: 0 13px;
+  color: var(--ink);
+  background: var(--orange);
+  font-family: var(--display);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.plan-head {
+  display: flex;
+  justify-content: space-between;
+  color: #666b72;
+  font-family: var(--display);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.plan-head p {
+  margin: 0;
+}
+
+.featured .plan-head {
+  color: #7c8492;
+}
+
+.plan-card h3 {
+  margin: 54px 0 28px;
+  font-size: 38px;
+  font-weight: 580;
+  letter-spacing: -0.05em;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.plan-price strong {
+  font-family: var(--display);
+  font-size: 46px;
+  font-weight: 560;
+  letter-spacing: -0.06em;
+}
+
+.plan-price span {
+  color: #7a7e84;
+  font-size: 11px;
+}
+
+.plan-description {
+  min-height: 84px;
+  margin: 28px 0;
+  color: #5e6267;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.featured .plan-description {
+  color: #989faa;
+}
+
+.plan-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 0 34px;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--line-paper);
+  list-style: none;
+}
+
+.featured ul {
+  border-color: var(--line-dark);
+}
+
+.plan-card li {
+  display: flex;
+  gap: 11px;
+  color: #44484d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.featured li {
+  color: #c3c8d0;
+}
+
+.plan-card li span {
+  color: var(--orange);
+}
+
+.plan-card .button {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Esports broadcast pass */
+.plan-card {
+  overflow: visible;
+}
+
+.plan-head p {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plan-head p i {
+  width: 5px;
+  height: 5px;
+  background: var(--orange);
+  box-shadow: none;
+}
+
+.protocol-label {
+  display: block;
+  margin-top: 38px;
+  color: #96999e;
+  font-family: var(--arena);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.featured .protocol-label {
+  color: #777f8d;
+}
+
+.plan-card h3 {
+  margin-top: 12px;
+  font-family: var(--arena);
+  font-size: 58px;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1180px) {
+  .plan-card {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 960px) {
+  .plan-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .plan-card {
+    min-height: 600px;
+  }
+
+  .plan-card.featured {
+    margin: 31px 0 0;
+    transform: none;
+  }
+
+  .plan-description {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .plan-grid {
+    margin-top: 68px;
+  }
+
+  .plan-card {
+    min-height: 570px;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .plan-card h3 {
+    font-size: 50px;
+  }
+}

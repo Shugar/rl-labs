@@ -1,0 +1,98 @@
+/* Notched-corner button. Two clipped layers: the root paints the 1px border,
+   the face paints the fill inset by 1px — so the border follows the notch
+   without gaps or floating diagonal lines. */
+
+.button {
+  position: relative;
+  display: inline-flex;
+  padding: 1px;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 680;
+  letter-spacing: 0.025em;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-face {
+  min-height: 52px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0 20px;
+  clip-path: polygon(0 0, calc(100% - 11.3px) 0, 100% 11.3px, 100% 100%, 11.3px 100%, 0 calc(100% - 11.3px));
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.button-label {
+  white-space: nowrap;
+}
+
+.button-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.button-meta small {
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  opacity: 0.72;
+}
+
+.button-primary {
+  background: var(--orange);
+}
+
+.button-primary .button-face {
+  color: #100c08;
+  background: var(--orange);
+}
+
+.button-primary:hover,
+.button-primary:hover .button-face {
+  background: var(--orange-bright);
+}
+
+.button-outline {
+  background: rgba(7, 9, 15, 0.4);
+}
+
+.button-outline .button-face {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.button-outline:hover {
+  background: var(--ink);
+}
+
+.button-ghost {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.button-ghost .button-face {
+  color: var(--white);
+  background: #0b0e15;
+}
+
+.button-ghost:hover {
+  background: var(--orange);
+}
+
+.button-sm {
+  font-size: 12px;
+}
+
+.button-sm .button-face {
+  min-height: 42px;
+  gap: 14px;
+  padding: 0 16px;
+}

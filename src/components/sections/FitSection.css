@@ -1,0 +1,145 @@
+.fit-heading {
+  max-width: 900px;
+}
+
+.fit-heading h2 {
+  color: var(--white);
+}
+
+.fit-switcher {
+  margin-top: 78px;
+  border: 1px solid var(--line-dark);
+  background: #0c1018;
+}
+
+.fit-tabs {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.fit-panel {
+  min-height: 430px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  animation: panelIn 360ms ease both;
+}
+
+.fit-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(38px, 6vw, 84px);
+  border-right: 1px solid var(--line-dark);
+}
+
+.fit-copy h3 {
+  max-width: 720px;
+  margin: 24px 0;
+  font-size: clamp(34px, 4vw, 62px);
+  font-weight: 540;
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+}
+
+.fit-copy > p {
+  max-width: 650px;
+  margin-bottom: 32px;
+  color: #949ba7;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.fit-copy .button {
+  align-self: flex-start;
+  max-width: 100%;
+}
+
+.light-link {
+  color: var(--white);
+}
+
+.fit-spec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(32px, 5vw, 70px);
+}
+
+.fit-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.fit-stat strong {
+  color: var(--orange);
+  font-family: var(--display);
+  font-size: clamp(60px, 8vw, 110px);
+  font-weight: 500;
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+}
+
+.fit-stat span,
+.fit-spec > p {
+  color: #757d89;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.fit-spec > p {
+  margin: 28px 0 16px;
+}
+
+.fit-spec ul {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  color: #c4c8cf;
+  list-style: none;
+  font-size: 12px;
+}
+
+.fit-spec li {
+  display: flex;
+  gap: 11px;
+}
+
+.fit-spec li span {
+  color: var(--orange);
+}
+
+@media (max-width: 960px) {
+  .fit-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .fit-copy {
+    border-right: 0;
+    border-bottom: 1px solid var(--line-dark);
+  }
+}
+
+@media (max-width: 680px) {
+  .fit-switcher {
+    margin-top: 48px;
+  }
+
+  .fit-copy,
+  .fit-spec {
+    padding: 30px 24px;
+  }
+
+  .fit-copy h3 {
+    font-size: 34px;
+  }
+
+  .fit-copy .button {
+    width: 100%;
+  }
+}

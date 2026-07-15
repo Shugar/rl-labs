@@ -1,0 +1,310 @@
+.coach-section {
+  background: var(--paper-soft);
+}
+
+.coach-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(70px, 10vw, 160px);
+  align-items: center;
+}
+
+.coach-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 610px;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(7, 9, 15, 0.65);
+  background: var(--ink);
+  box-shadow: 24px 28px 0 rgba(7, 9, 15, 0.07);
+}
+
+.coach-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(130deg, transparent 45%, rgba(255, 92, 36, 0.12)),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+}
+
+.coach-card-top,
+.coach-card-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  color: #737b88;
+  font-family: var(--display);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.coach-monogram {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-height: 470px;
+  display: grid;
+  place-items: center;
+}
+
+.coach-monogram > span {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  font-family: var(--display);
+  font-size: clamp(130px, 16vw, 240px);
+  font-weight: 680;
+  line-height: 1;
+}
+
+.coach-monogram > span::after {
+  content: ".25";
+  position: absolute;
+  top: 46%;
+  right: -38px;
+  color: var(--orange);
+  font-size: 16px;
+  letter-spacing: 0;
+}
+
+.coach-rings,
+.coach-rings i {
+  position: absolute;
+  inset: 50%;
+  border: 1px solid rgba(255, 92, 36, 0.25);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.coach-rings { width: 350px; height: 350px; }
+.coach-rings i:nth-child(1) { width: 260px; height: 260px; }
+.coach-rings i:nth-child(2) { width: 170px; height: 170px; }
+.coach-rings i:nth-child(3) { width: 440px; height: 440px; border-style: dashed; animation: spin 24s linear infinite; }
+
+@keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+.coach-card-top {
+  margin-top: 14px;
+}
+
+.coach-card-bottom {
+  gap: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-dark);
+}
+
+.coach-card-bottom div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.coach-card-bottom strong {
+  color: var(--white);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.coach-copy h2 {
+  font-size: clamp(56px, 7.5vw, 112px);
+}
+
+.coach-lede {
+  max-width: 700px;
+  margin: 42px 0;
+  color: #4c5055;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.coach-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line-paper);
+  border-bottom: 1px solid var(--line-paper);
+}
+
+.coach-stats div {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px;
+  border-right: 1px solid var(--line-paper);
+}
+
+.coach-stats div:first-child { padding-left: 0; }
+.coach-stats div:last-child { border-right: 0; }
+
+.coach-stats strong {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+
+.coach-stats span {
+  color: #666a6f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.coach-links {
+  display: flex;
+  gap: 44px;
+  margin-top: 30px;
+}
+
+.coach-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+/* Esports broadcast pass */
+.coach-card {
+  border: 0;
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 22px 100%, 0 calc(100% - 22px));
+  box-shadow: 26px 30px 0 rgba(7, 9, 15, 0.08);
+}
+
+.coach-card::after {
+  content: "HEAD COACH / ACTIVE";
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  right: 30px;
+  padding: 7px 12px;
+  color: #090a0c;
+  background: var(--orange);
+  font-family: var(--arena);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.coach-principle {
+  display: grid;
+  grid-template-columns: 0.32fr 1fr;
+  gap: 24px;
+  align-items: start;
+  margin: 0 0 34px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line-paper);
+}
+
+.coach-principle span {
+  color: var(--orange);
+  font-family: var(--arena);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.coach-principle strong {
+  font-family: var(--arena);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1180px) {
+  .coach-grid {
+    grid-template-columns: 0.72fr 1.28fr;
+    gap: 70px;
+  }
+
+  .coach-card {
+    min-height: 540px;
+  }
+
+  .coach-monogram {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 960px) {
+  .coach-grid {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .coach-card {
+    width: min(100%, 570px);
+    justify-self: center;
+  }
+
+  .coach-copy {
+    order: -1;
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 680px) {
+  .coach-grid {
+    gap: 54px;
+  }
+
+  .coach-card {
+    min-height: 450px;
+    padding: 18px;
+  }
+
+  .coach-monogram {
+    min-height: 330px;
+  }
+
+  .coach-rings { width: 270px; height: 270px; }
+  .coach-rings i:nth-child(1) { width: 205px; height: 205px; }
+  .coach-rings i:nth-child(2) { width: 140px; height: 140px; }
+  .coach-rings i:nth-child(3) { width: 330px; height: 330px; }
+
+  .coach-card-bottom {
+    gap: 10px;
+  }
+
+  .coach-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .coach-stats div,
+  .coach-stats div:first-child {
+    min-height: 110px;
+    padding: 18px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line-paper);
+  }
+
+  .coach-stats div:last-child {
+    border-bottom: 0;
+  }
+
+  .coach-links {
+    justify-content: space-between;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .coach-principle {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .coach-principle strong {
+    font-size: 26px;
+  }
+}

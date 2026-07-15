@@ -1,0 +1,139 @@
+footer {
+  position: relative;
+  overflow: hidden;
+  padding: 0 max(36px, calc((100vw - var(--max)) / 2)) 30px;
+  color: var(--white);
+  background: #06080d;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr auto;
+  gap: clamp(44px, 6vw, 110px);
+  align-items: start;
+  padding: 64px 0 56px;
+}
+
+.footer-brand p {
+  max-width: 330px;
+  margin: 24px 0 0;
+  color: #8a919c;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.footer-nav span {
+  margin-bottom: 8px;
+  color: var(--orange);
+  font-family: var(--arena);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.footer-nav a {
+  color: #b8bec9;
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.footer-nav a:hover {
+  color: var(--white);
+}
+
+.footer-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.footer-cta strong {
+  font-family: var(--arena);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.footer-bottom {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 70px;
+  align-items: start;
+  padding-top: 26px;
+  border-top: 1px solid var(--line-dark);
+  color: #656d79;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.footer-bottom p {
+  max-width: 780px;
+  margin: 0;
+  justify-self: end;
+  text-align: right;
+}
+
+@media (max-width: 960px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-cta {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-bottom p {
+    justify-self: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 680px) {
+  footer {
+    padding-inline: 18px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    padding: 48px 0;
+  }
+
+  .footer-nav {
+    gap: 24px;
+  }
+
+  .footer-cta strong {
+    font-size: 28px;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-bottom p {
+    justify-self: start;
+    text-align: left;
+  }
+}
