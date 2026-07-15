@@ -68,7 +68,7 @@ float tacticalNode(vec2 p, vec2 position, float radius) {
 
 void main() {
   float t = uTime;
-  vec2 pointer = (uPointer - 0.5) * vec2(0.052, 0.034);
+  vec2 pointer = (uPointer - 0.5) * vec2(0.010, 0.006);
   vec2 p = vUv - 0.5;
   p.x *= uAspect;
   p += pointer;
@@ -289,8 +289,8 @@ export function FinalCtaWebGL() {
       if (disposed || contextLost) return;
 
       resize();
-      pointer[0] += (targetPointer[0] - pointer[0]) * 0.05;
-      pointer[1] += (targetPointer[1] - pointer[1]) * 0.05;
+      pointer[0] += (targetPointer[0] - pointer[0]) * 0.025;
+      pointer[1] += (targetPointer[1] - pointer[1]) * 0.025;
 
       gl.useProgram(program);
       gl.uniform1f(timeLocation, motionQuery.matches ? 7.25 : timestamp * 0.001);

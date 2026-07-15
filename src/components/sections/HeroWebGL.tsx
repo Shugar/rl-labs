@@ -74,7 +74,7 @@ float beamMask(vec2 p, vec2 origin, vec2 target, float spread) {
 
 void main() {
   float t = uTime;
-  vec2 pointer = (uPointer - 0.5) * vec2(0.075, 0.045);
+  vec2 pointer = (uPointer - 0.5) * vec2(0.012, 0.007);
   vec2 p = vUv - 0.5;
   p.x *= uAspect;
   p += pointer;
@@ -289,8 +289,8 @@ export function HeroWebGL() {
       if (disposed || contextLost) return;
 
       resize();
-      pointer[0] += (targetPointer[0] - pointer[0]) * 0.055;
-      pointer[1] += (targetPointer[1] - pointer[1]) * 0.055;
+      pointer[0] += (targetPointer[0] - pointer[0]) * 0.025;
+      pointer[1] += (targetPointer[1] - pointer[1]) * 0.025;
 
       gl.useProgram(program);
       gl.uniform1f(timeLocation, motionQuery.matches ? 4.75 : timestamp * 0.001);
