@@ -1,12 +1,9 @@
 import { useState } from "react";
+import { externalLinks } from "../../data/links";
+import { memberReviews } from "../../data/proof";
+import { Arrow } from "../shared/Arrow";
 import { KineticTitle } from "../shared/KineticTitle";
 import "./ProofSection.css";
-
-const deltas = [
-  { label: "Boost wasted", before: "38%", after: "12%" },
-  { label: "Decision delay", before: "0.90s", after: "0.42s" },
-  { label: "Double commits / game", before: "7", after: "1" },
-] as const;
 
 const replayPhases = [
   {
@@ -130,28 +127,27 @@ function ReplayField({ phase }: { phase: ReplayPhase }) {
 export function ProofSection() {
   const [activePhase, setActivePhase] = useState<ReplayPhase>("fix");
   const selectedPhase = replayPhases.find((phase) => phase.id === activePhase) ?? replayPhases[1];
-
   return (
-    <section className="proof-section section-pad">
+    <section className="proof-section section-pad" id="proof">
       <div className="proof-heading" data-reveal>
         <div>
-          <p className="eyebrow dark-eyebrow">Proof protocol</p>
+          <p className="eyebrow dark-eyebrow">Results before pricing</p>
           <KineticTitle
             lines={[
-              { text: "No vague wins." },
-              { text: "Track the change.", accent: true },
+              { text: "The RL Labs" },
+              { text: "Development Framework.", accent: true },
             ]}
           />
         </div>
-        <p>RL Labs measures progress through decisions you can see in the replay—not motivational noise.</p>
+        <p>Diagnose the repeated mistake, rebuild the decision, then verify the change in replay and rank. The framework is the method; these are the member results behind it.</p>
       </div>
 
       <div className="proof-panel" data-reveal>
         <div className="proof-story">
           <div className="proof-narrative">
-            <span className="proof-kicker">Replay study / 2v2 defense</span>
+            <span className="proof-kicker">Framework demo / 2v2 defense</span>
             <h3>The same play.<br />A better decision.</h3>
-            <p>We isolate one recurring mistake, train one clear cue, then look for the correction in future replays.</p>
+            <p>This illustrative replay shows how the RL Labs Development Framework turns a recurring mistake into one trainable cue.</p>
 
             <ol className="proof-steps">
               <li>
@@ -198,19 +194,34 @@ export function ProofSection() {
           </div>
         </div>
 
-        <div className="proof-deltas" aria-label="Measured progress">
-          <span className="delta-intro">Replay trend<br /><strong>After four weeks</strong></span>
-          {deltas.map((delta) => (
-            <div className="delta-cell" key={delta.label}>
-              <span className="delta-label">{delta.label}</span>
-              <span className="delta-value">
-                <s>{delta.before}</s>
-                <span aria-hidden="true">→</span>
-                <strong>{delta.after}</strong>
-              </span>
-            </div>
-          ))}
+      </div>
+
+      <div className="review-section-head" data-reveal>
+        <div>
+          <span>MEMBER REVIEWS / WHOP + DISCORD</span>
+          <h3>What members are saying.</h3>
         </div>
+        <a href={externalLinks.reviews} target="_blank" rel="noreferrer">See verified Whop reviews <Arrow /></a>
+      </div>
+
+      <div className="review-grid">
+        {memberReviews.map((review) => (
+          <article className="review-card" data-reveal key={review.id}>
+            <div className="review-meta">
+              <span className="review-avatar">
+                {review.avatar ? <img src={review.avatar} alt="" loading="lazy" /> : review.initials}
+              </span>
+              <div>
+                <strong>{review.name}</strong>
+                <span className={review.source === "Whop" ? "is-whop" : ""}>
+                  {review.source === "Whop" ? "★★★★★ · Verified on Whop" : "Discord member post"}
+                </span>
+              </div>
+            </div>
+            <blockquote>“{review.quote}”</blockquote>
+            <div className="review-result"><span>Reported result</span><strong>{review.result}</strong></div>
+          </article>
+        ))}
       </div>
     </section>
   );

@@ -1,8 +1,7 @@
 export function BrandMark() {
   return (
     <span className="brand-mark" aria-hidden="true">
-      <span className="brand-orbit" />
-      <span className="brand-core" />
+      <img src="/brand/rl-labs-logo.png" alt="" />
     </span>
   );
 }

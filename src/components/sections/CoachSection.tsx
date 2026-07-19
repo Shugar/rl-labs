@@ -1,4 +1,3 @@
-import { Arrow } from "../shared/Arrow";
 import { KineticTitle } from "../shared/KineticTitle";
 import "./CoachSection.css";
 
@@ -12,7 +11,7 @@ export function CoachSection() {
             <span>VERIFIED_25</span>
           </div>
           <div className="coach-monogram">
-            <span>K</span>
+            <span>KINSEH</span>
             <div className="coach-rings" aria-hidden="true"><i /><i /><i /></div>
           </div>
           <div className="coach-card-bottom">
@@ -40,10 +39,6 @@ export function CoachSection() {
             <div><strong>0.001%</strong><span>Competed with the top tier of players globally</span></div>
             <div><strong>20K+</strong><span>Hours playing, competing, and coaching</span></div>
             <div><strong>All ranks</strong><span>Experience coaching across modes and skill levels</span></div>
-          </div>
-          <div className="coach-links">
-            <a href={import.meta.env.VITE_COACH_PROFILE_URL || "#programs"}>Pro career <Arrow /></a>
-            <a href={import.meta.env.VITE_TRACKER_URL || "#programs"}>RL Tracker <Arrow /></a>
           </div>
         </div>
       </div>

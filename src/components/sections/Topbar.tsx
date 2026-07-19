@@ -5,7 +5,7 @@ import "./Topbar.css";
 
 const NAV = [
   { href: "#method", label: "Method" },
-  { href: "#coach", label: "Coach" },
+  { href: "#proof", label: "Results" },
   { href: "#programs", label: "Programs" },
   { href: "#faq", label: "FAQ" },
 ];

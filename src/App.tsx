@@ -19,7 +19,6 @@ function App() {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reducedMotion) {
       elements.forEach((element) => element.classList.add("is-visible"));
-      return;
     }
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,7 +32,49 @@ function App() {
       { threshold: 0.13, rootMargin: "0px 0px -5%" },
     );
     elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
+
+    // Mobile browsers can move a long way during an anchored or inertial
+    // scroll without delivering every intermediate intersection. Keep a
+    // lightweight, frame-throttled fallback so content that lands in the
+    // viewport never remains transparent.
+    let revealFrame = 0;
+    const revealVisibleElements = () => {
+      cancelAnimationFrame(revealFrame);
+      revealFrame = requestAnimationFrame(() => {
+        elements.forEach((element) => {
+          if (element.classList.contains("is-visible")) return;
+          const bounds = element.getBoundingClientRect();
+          if (bounds.bottom > 0 && bounds.top < window.innerHeight * 0.95) {
+            element.classList.add("is-visible");
+            observer.unobserve(element);
+          }
+        });
+      });
+    };
+
+    let hashFrame = 0;
+    const navigateToHash = () => {
+      revealVisibleElements();
+      cancelAnimationFrame(hashFrame);
+      hashFrame = requestAnimationFrame(() => {
+        const hash = window.location.hash.slice(1);
+        if (!hash) return;
+        const target = document.getElementById(hash);
+        target?.scrollIntoView({ block: "start" });
+      });
+    };
+
+    navigateToHash();
+    window.addEventListener("scroll", revealVisibleElements, { passive: true });
+    window.addEventListener("hashchange", navigateToHash);
+
+    return () => {
+      cancelAnimationFrame(revealFrame);
+      cancelAnimationFrame(hashFrame);
+      window.removeEventListener("scroll", revealVisibleElements);
+      window.removeEventListener("hashchange", navigateToHash);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -42,13 +83,13 @@ function App() {
       <main>
         <Hero />
         <BroadcastTicker />
-        <RankSystem />
         <ProblemSection />
         <MethodSection />
         <CoachSection />
+        <RankSystem />
+        <ProofSection />
         <ProgramsSection />
         <FitSection />
-        <ProofSection />
         <FinalCta />
         <FaqSection />
       </main>

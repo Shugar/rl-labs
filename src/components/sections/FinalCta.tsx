@@ -19,37 +19,38 @@ export function FinalCta() {
             { text: "In circles.", accent: true },
           ]}
         />
-        <p>The blueprint is already built. Choose the level of support that matches your goal.</p>
+        <p>Start with the full group system, or apply for a private coaching routine built around your game.</p>
         <div className="cta-actions">
           <ProgramLink plan="premium" variant="primary" />
-          <ProgramLink plan="free" variant="ghost" />
+          <ProgramLink plan="elite" variant="ghost" />
+          <span className="cta-free-option">Not ready? <ProgramLink plan="free" variant="inline" /></span>
         </div>
       </div>
       <div className="cta-rank-stage" data-reveal>
         <div className="cta-rank">
           <span className="cta-rank-head">
-            <span>PLAYER PROGRESSION / COACH-ASSISTED</span>
-            <span className="cta-rank-tier">TIER 05 // 08</span>
+            <span>MEMBER RESULT / DISCORD</span>
+            <span className="cta-rank-tier">1 SEASON</span>
           </span>
           <div className="promotion-panel">
-            <div><RankIcon rank={ranks[4]} /><span>NOW / DIAMOND</span></div>
+            <div><RankIcon rank={ranks[6]} /><span>START / 1630 GC2</span></div>
             <div className="promotion-track" aria-hidden="true">
               <span className="promotion-line"><b /><b /><i /></span>
               <span className="promotion-waypoints">
-                <span>{ranks[5].short}</span>
-                <span>{ranks[6].short}</span>
+                <span>GC2</span>
+                <span>GC3</span>
               </span>
             </div>
             <div className="promotion-next">
               <i className="promotion-reticle" aria-hidden="true" />
               <RankIcon rank={ranks[7]} />
-              <span>NEXT / SSL</span>
+              <span>FINISH / SSL</span>
             </div>
           </div>
           <div className="promotion-meta">
-            <div><span>TIERS UP</span><strong>+03</strong></div>
-            <div><span>FIELD ROUTE</span><strong>{ranks[5].short} // {ranks[6].short}</strong></div>
-            <div><span>STATUS</span><strong className="promotion-live"><i />ROTATION</strong></div>
+            <div><span>MEMBER</span><strong>NATH FAN</strong></div>
+            <div><span>ROUTE</span><strong>GC2 // GC3 // SSL</strong></div>
+            <div><span>STATUS</span><strong className="promotion-live"><i />DOCUMENTED</strong></div>
           </div>
         </div>
       </div>

@@ -24,11 +24,11 @@ export function Hero() {
           Rocket League coaching built by a former pro and 25× SSL player—to make your decisions faster, your playstyle harder to read, and your climb repeatable.
         </p>
         <div className="hero-actions">
-          <Button href="#programs" variant="primary">
-            Explore coaching
+          <Button href="#proof" variant="primary">
+            See member results
           </Button>
-          <a className="text-link" href="#method">
-            See the method <span className="play-dot">▶</span>
+          <a className="text-link" href="#programs">
+            Explore coaching <span className="play-dot">▶</span>
           </a>
         </div>
         <div className="hero-proof" aria-label="Coach credentials">

@@ -44,6 +44,12 @@
   to { transform: translateX(-50%); }
 }
 
+@media (min-width: 1400px) {
+  .broadcast-ticker {
+    zoom: 0.9;
+  }
+}
+
 @media (max-width: 680px) {
   .ticker-group {
     height: 36px;

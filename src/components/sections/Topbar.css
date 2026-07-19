@@ -91,6 +91,23 @@
   justify-self: end;
 }
 
+@media (min-width: 1400px) {
+  .topbar-main {
+    height: 68.4px;
+    padding-inline: max(32.4px, calc((100vw - var(--max)) / 2));
+  }
+
+  .topbar.is-scrolled .topbar-main {
+    height: 52.2px;
+  }
+
+  .topbar .brand,
+  .topbar .nav-cta,
+  .main-nav {
+    zoom: 0.9;
+  }
+}
+
 @media (max-width: 960px) {
   .main-nav {
     display: none;

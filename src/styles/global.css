@@ -31,6 +31,14 @@
   --max: 1440px;
 }
 
+/* A wide desktop gets the same 1440px design canvas at 90% density that
+   users previously reached through browser zoom. */
+@media (min-width: 1400px) {
+  :root {
+    --max: 1296px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -94,38 +102,18 @@ canvas {
 
 .brand-mark {
   position: relative;
-  width: 28px;
-  height: 28px;
-  display: inline-grid;
-  place-items: center;
+  width: 30px;
+  height: 35px;
+  flex: 0 0 auto;
+  display: block;
+  overflow: hidden;
 }
 
-.brand-orbit {
-  position: absolute;
-  inset: 1px;
-  border: 2px solid var(--orange);
-  border-right-color: transparent;
-  border-radius: 50%;
-  transform: rotate(-28deg);
-}
-
-.brand-orbit::after {
-  content: "";
-  position: absolute;
-  right: 1px;
-  bottom: 1px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--orange);
-  box-shadow: 0 0 12px var(--orange);
-}
-
-.brand-core {
-  width: 7px;
-  height: 7px;
-  border: 2px solid var(--white);
-  border-radius: 50%;
+.brand-mark img {
+  width: 83px;
+  max-width: none;
+  height: auto;
+  transform: translate(-27px, -17px);
 }
 
 .brand-type {
@@ -572,13 +560,17 @@ h2 em {
 
   .brand-mark {
     width: 24px;
-    height: 24px;
+    height: 29px;
+  }
+
+  .brand-mark img {
+    width: 68px;
+    transform: translate(-22px, -14px);
   }
 
   .topbar .brand,
   .text-link,
-  .inline-link,
-  .coach-links a {
+  .inline-link {
     min-height: 44px;
   }
 

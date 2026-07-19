@@ -1,4 +1,5 @@
 .rank-system {
+  scroll-margin-top: 58px;
   padding: 26px max(36px, calc((100vw - var(--max)) / 2)) 46px;
   color: var(--white);
   border-top: 1px solid var(--line-dark);
@@ -23,6 +24,14 @@
   gap: 16px;
   align-items: start;
   margin-top: 40px;
+}
+
+.rank-scroll {
+  min-width: 0;
+}
+
+.rank-range-mobile {
+  display: none;
 }
 
 .rank-track-line {
@@ -77,16 +86,53 @@
 @media (max-width: 960px) {
   .rank-system {
     padding-inline: 28px;
+    overflow: hidden;
+  }
+
+  .rank-scroll {
+    margin-inline: -28px;
+    padding-inline: 28px;
     overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .rank-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rank-scroll:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: -2px;
   }
 
   .rank-track {
     min-width: 790px;
   }
+
+  .rank-step {
+    scroll-snap-align: center;
+  }
+
 }
 
 @media (max-width: 680px) {
   .rank-system {
     padding-inline: 18px;
+  }
+
+  .rank-scroll {
+    margin-inline: -18px;
+    padding-inline: 18px;
+  }
+
+  .rank-range-full {
+    display: none;
+  }
+
+  .rank-range-mobile {
+    display: inline;
   }
 }

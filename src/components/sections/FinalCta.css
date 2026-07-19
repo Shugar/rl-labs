@@ -63,6 +63,31 @@
   line-height: 1.7;
 }
 
+.cta-actions {
+  flex-wrap: wrap;
+}
+
+.cta-free-option {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #767e8b;
+  font-size: 12px;
+}
+
+.cta-free-option .inline-link {
+  min-height: auto;
+  padding-bottom: 2px;
+  color: #c3c8d1;
+  font-size: 12px;
+}
+
+.cta-free-option .arrow {
+  width: 14px;
+  height: 14px;
+}
+
 /* Progression panel */
 .cta-rank-stage {
   min-width: 380px;
@@ -353,6 +378,14 @@
 
   .cta-content h2 {
     font-size: clamp(60px, 18vw, 90px);
+  }
+
+  .cta-actions {
+    align-items: stretch;
+  }
+
+  .cta-free-option {
+    justify-content: center;
   }
 
   .promotion-panel {
