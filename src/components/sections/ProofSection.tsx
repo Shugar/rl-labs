@@ -196,7 +196,7 @@ export function ProofSection() {
 
       </div>
 
-      <div className="review-section-head" data-reveal>
+      <div className="review-section-head" id="testimonials" data-reveal>
         <div>
           <span>MEMBER REVIEWS / WHOP + DISCORD</span>
           <h3>What members are saying.</h3>

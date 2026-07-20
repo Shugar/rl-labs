@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
   <title id="title">RL Labs — Stop guessing. Start ranking up.</title>
-  <desc id="description">A type-led social card for RL Labs Rocket League coaching with the headline Stop guessing. Start ranking up. and coach credentials.</desc>
+  <desc id="description">RL Labs Rocket League coaching with the headline Stop guessing. Start ranking up. and Kinseh's coaching credentials.</desc>
 
   <style>
     @font-face {
-      font-family: "RL Display";
+      font-family: "RL Arena";
       src: url("/fonts/barlow-condensed-600.woff2") format("woff2");
       font-style: normal;
       font-weight: 600;
@@ -15,99 +15,81 @@
       font-style: normal;
       font-weight: 200 800;
     }
-    .display { font-family: "RL Display", "Arial Narrow", sans-serif; font-weight: 600; }
+    .arena { font-family: "RL Arena", "Arial Narrow", sans-serif; font-weight: 600; }
     .sans { font-family: "RL Sans", Arial, sans-serif; }
   </style>
 
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#05070d" />
-      <stop offset="0.56" stop-color="#090d19" />
-      <stop offset="1" stop-color="#07101f" />
-    </linearGradient>
-    <radialGradient id="orangeAtmosphere" cx="0" cy="0" r="1" gradientTransform="translate(120 680) rotate(-32) scale(820 400)" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ff5c24" stop-opacity="0.32" />
-      <stop offset="0.43" stop-color="#ff5c24" stop-opacity="0.08" />
+    <radialGradient id="orangeGlow" cx="0" cy="0" r="1" gradientTransform="translate(100 580) rotate(-28) scale(720 430)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff5c24" stop-opacity="0.30" />
+      <stop offset="0.48" stop-color="#ff5c24" stop-opacity="0.08" />
       <stop offset="1" stop-color="#ff5c24" stop-opacity="0" />
     </radialGradient>
-    <radialGradient id="blueAtmosphere" cx="0" cy="0" r="1" gradientTransform="translate(1135 34) rotate(142) scale(730 420)" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#237dff" stop-opacity="0.26" />
-      <stop offset="0.47" stop-color="#237dff" stop-opacity="0.07" />
-      <stop offset="1" stop-color="#237dff" stop-opacity="0" />
+    <radialGradient id="blueGlow" cx="0" cy="0" r="1" gradientTransform="translate(1160 28) rotate(145) scale(690 450)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#52b8ff" stop-opacity="0.24" />
+      <stop offset="0.5" stop-color="#52b8ff" stop-opacity="0.06" />
+      <stop offset="1" stop-color="#52b8ff" stop-opacity="0" />
     </radialGradient>
-    <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="0.65" fill="#ffffff" fill-opacity="0.12" />
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#f7f6f0" stroke-opacity="0.035" />
     </pattern>
   </defs>
 
-  <rect width="1200" height="630" fill="url(#background)" />
-  <rect width="1200" height="630" fill="url(#orangeAtmosphere)" />
-  <rect width="1200" height="630" fill="url(#blueAtmosphere)" />
+  <!-- The palette is shared with the website tokens: ink, panel, white, orange, blue, and lime. -->
+  <rect width="1200" height="630" fill="#07090f" />
+  <rect width="1200" height="630" fill="url(#orangeGlow)" />
+  <rect width="1200" height="630" fill="url(#blueGlow)" />
+  <path d="M96 0H244L518 630H352Z" fill="#ff5c24" fill-opacity="0.035" />
+  <path d="M489 0H604L719 630H568Z" fill="#f7f6f0" fill-opacity="0.018" />
+  <path d="M940 0H1102L830 630H678Z" fill="#52b8ff" fill-opacity="0.035" />
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.42" />
 
-  <!-- Quiet stadium atmosphere; text remains the only focal point. -->
-  <path d="M116 0H242L524 630H356Z" fill="#ff5c24" fill-opacity="0.033" />
-  <path d="M500 0H594L708 630H572Z" fill="#f7f6f0" fill-opacity="0.022" />
-  <path d="M928 0H1088L828 630H684Z" fill="#52b8ff" fill-opacity="0.04" />
-  <path d="M0 519H1200M0 566H1200M0 613H1200M123 475L33 630M317 465L283 630M510 462L526 630M703 465L771 630M896 478L1017 630" fill="none" stroke="#f7f6f0" stroke-opacity="0.034" />
-  <rect width="1200" height="630" fill="url(#dots)" opacity="0.14" />
-
-  <!-- Brand -->
-  <g transform="translate(69 48)">
-    <circle cx="18" cy="18" r="12" fill="none" stroke="#ff5c24" stroke-width="3" />
-    <circle cx="18" cy="18" r="7" fill="none" stroke="#ffa53d" stroke-width="2" />
-    <path d="M10 28L7 37L16 34L18 40L21 34L30 37L27 28" fill="none" stroke="#ff5c24" stroke-width="2.5" stroke-linejoin="round" />
-    <text class="sans" x="47" y="26" fill="#f7f6f0" font-size="21" font-weight="800" letter-spacing="3.2">RL.LABS</text>
-    <rect x="72.5" y="30" width="3.5" height="3.5" fill="#ff5c24" />
-  </g>
-  <text class="sans" x="1131" y="72" text-anchor="end" fill="#8b93a2" font-size="11" font-weight="700" letter-spacing="2.2">RANKED PERFORMANCE LAB // ONLINE</text>
-
-  <!-- Hero message -->
-  <g class="sans">
-    <circle cx="75" cy="137" r="4" fill="#ff5c24" />
-    <circle cx="75" cy="137" r="11" fill="#ff5c24" fill-opacity="0.1" />
-    <text x="94" y="142" fill="#c5cad3" font-size="13" font-weight="700" letter-spacing="2.25">ROCKET LEAGUE COACHING BY KINSEH</text>
+  <!-- Brand: larger, cleaner, and free of the former stray dot. -->
+  <g transform="translate(70 50)">
+    <circle cx="18" cy="17" r="12" fill="none" stroke="#ff5c24" stroke-width="3.2" />
+    <circle cx="18" cy="17" r="7" fill="none" stroke="#ff7a36" stroke-width="2.2" />
+    <path d="M10 28L7 40L16 36L18 43L21 36L30 40L27 28" fill="none" stroke="#ff5c24" stroke-width="2.8" stroke-linejoin="round" />
+    <text class="sans" x="48" y="34" fill="#f7f6f0" font-size="27" font-weight="800" letter-spacing="3.8">RL.LABS</text>
   </g>
 
-  <g class="display" font-size="118" letter-spacing="-2.4">
-    <text x="68" y="252" fill="#f7f6f0">STOP GUESSING.</text>
-    <text x="68" y="354" fill="#ff5c24">START RANKING UP.</text>
+  <!-- Primary message -->
+  <g class="arena" font-size="132" letter-spacing="-2.7">
+    <text x="67" y="235" fill="#f7f6f0">STOP GUESSING.</text>
+    <text x="67" y="352" fill="#ff5c24">START RANKING UP.</text>
   </g>
 
-  <text class="sans" x="71" y="400" fill="#c4c8d1" font-size="21" font-weight="430">
-    <tspan x="71">Coaching built by a former pro and 25× SSL player—to make your</tspan>
-    <tspan x="71" dy="31">decisions faster, your playstyle harder to read, and your climb repeatable.</tspan>
+  <text class="sans" x="71" y="407" fill="#f7f6f0" font-size="25" font-weight="470">
+    <tspan x="71">Coaching built by a former pro who has reached SSL 25+ times—to make your</tspan>
+    <tspan x="71" dy="37" fill="#9ca2af">decisions faster, your playstyle harder to read, and your climb repeatable.</tspan>
   </text>
 
-  <!-- Clean editorial proof strip -->
-  <g transform="translate(70 479)">
-    <path d="M0 0H1060" stroke="#ffffff" stroke-opacity="0.18" />
-    <path d="M0 0H82" stroke="#ff5c24" stroke-width="3" />
+  <!-- One editorial proof rail instead of three floating cards. -->
+  <g transform="translate(0 492)">
+    <rect width="1200" height="138" fill="#efeee8" />
+    <rect width="1200" height="5" fill="#ff5c24" />
 
-    <g transform="translate(0 25)">
-      <text class="display" x="0" y="61" fill="#f7f6f0" font-size="72" letter-spacing="-1">25×</text>
-      <circle cx="137" cy="27" r="3.5" fill="#ff5c24" />
-      <text class="sans" x="153" y="25" fill="#c7ccd5" font-size="14" font-weight="750" letter-spacing="1.45">SUPERSONIC</text>
-      <text class="sans" x="153" y="49" fill="#8f97a5" font-size="14" font-weight="750" letter-spacing="1.45">LEGEND</text>
+    <g transform="translate(70 0)">
+      <text class="arena" x="0" y="91" fill="#07090f" font-size="78" letter-spacing="-1.2">25+</text>
+      <text class="sans" x="143" y="67" fill="#07090f" font-size="19" font-weight="800" letter-spacing="1.5">TIMES AT</text>
+      <text class="sans" x="143" y="94" fill="#07090f" fill-opacity="0.62" font-size="19" font-weight="760" letter-spacing="1.5">SSL</text>
     </g>
 
-    <path d="M345 24V103" stroke="#ffffff" stroke-opacity="0.13" />
+    <path d="M411 28V111" stroke="#07090f" stroke-opacity="0.17" />
 
-    <g transform="translate(382 25)">
-      <text class="display" x="0" y="61" fill="#f7f6f0" font-size="72" letter-spacing="-1">20K+</text>
-      <circle cx="163" cy="27" r="3.5" fill="#52b8ff" />
-      <text class="sans" x="179" y="25" fill="#c7ccd5" font-size="14" font-weight="750" letter-spacing="1.45">HOURS</text>
-      <text class="sans" x="179" y="49" fill="#8f97a5" font-size="14" font-weight="750" letter-spacing="1.45">IN-GAME</text>
+    <g transform="translate(447 0)">
+      <text class="arena" x="0" y="91" fill="#07090f" font-size="78" letter-spacing="-1.2">20K+</text>
+      <text class="sans" x="172" y="67" fill="#07090f" font-size="19" font-weight="800" letter-spacing="1.35">HOURS</text>
+      <text class="sans" x="172" y="94" fill="#07090f" fill-opacity="0.62" font-size="19" font-weight="760" letter-spacing="1.35">IN-GAME</text>
     </g>
 
-    <path d="M725 24V103" stroke="#ffffff" stroke-opacity="0.13" />
+    <path d="M793 28V111" stroke="#07090f" stroke-opacity="0.17" />
 
-    <g transform="translate(762 25)">
-      <text class="display" x="0" y="61" fill="#f7f6f0" font-size="72" letter-spacing="-1">10+</text>
-      <circle cx="134" cy="27" r="3.5" fill="#d8ff4f" />
-      <text class="sans" x="150" y="25" fill="#c7ccd5" font-size="14" font-weight="750" letter-spacing="1.45">YEARS</text>
-      <text class="sans" x="150" y="49" fill="#8f97a5" font-size="14" font-weight="750" letter-spacing="1.45">COMPETING</text>
+    <g transform="translate(830 0)">
+      <text class="arena" x="0" y="91" fill="#07090f" font-size="78" letter-spacing="-1.2">10+</text>
+      <text class="sans" x="132" y="67" fill="#07090f" font-size="19" font-weight="800" letter-spacing="1.35">YEARS</text>
+      <text class="sans" x="132" y="94" fill="#07090f" fill-opacity="0.62" font-size="19" font-weight="760" letter-spacing="1.35">COMPETING</text>
     </g>
   </g>
 
-  <rect x="0.5" y="0.5" width="1199" height="629" fill="none" stroke="#ffffff" stroke-opacity="0.07" />
+  <rect x="0.5" y="0.5" width="1199" height="629" fill="none" stroke="#f7f6f0" stroke-opacity="0.08" />
 </svg>

@@ -25,15 +25,15 @@ export function CoachSection() {
           <KineticTitle
             lines={[
               { text: "Former pro." },
-              { text: "25× SSL.", accent: true },
+              { text: "25+ TIMES AT SSL.", accent: true },
             ]}
           />
           <p className="coach-lede">
-            Kinseh built his game at the highest level through positioning, reads, and game sense—not a highlight-reel dependency. That is exactly what makes the system teachable.
+            Kinseh built his game at the highest level through positioning, reads, and game sense. That is exactly what makes the system teachable.
           </p>
           <div className="coach-principle">
             <span>KINSEH // COACHING PRINCIPLE</span>
-            <strong>A mechanical fix wins one moment. A better read wins the next hundred.</strong>
+            <strong>The right decision means nothing without the mechanics to execute it, and mechanics mean nothing without the judgment to use them.</strong>
           </div>
           <div className="coach-stats">
             <div><strong>0.001%</strong><span>Competed with the top tier of players globally</span></div>

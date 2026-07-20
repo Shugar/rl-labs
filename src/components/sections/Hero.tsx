@@ -21,18 +21,18 @@ export function Hero() {
           ]}
         />
         <p className="hero-lede">
-          Rocket League coaching built by a former pro and 25× SSL player—to make your decisions faster, your playstyle harder to read, and your climb repeatable.
+          Rocket League coaching built by a former pro who has reached SSL 25+ times—to make your decisions faster, your playstyle harder to read, and your climb repeatable.
         </p>
         <div className="hero-actions">
-          <Button href="#proof" variant="primary">
-            See member results
+          <Button href="#programs" variant="primary">
+            Explore coaching plans
           </Button>
-          <a className="text-link" href="#programs">
-            Explore coaching <span className="play-dot">▶</span>
+          <a className="text-link" href="#testimonials">
+            See member results <span className="play-dot">▶</span>
           </a>
         </div>
         <div className="hero-proof" aria-label="Coach credentials">
-          <div><strong>25×</strong><span>Supersonic Legend</span></div>
+          <div><strong>25+</strong><span>Times at SSL</span></div>
           <div><strong>20K+</strong><span>Hours in-game</span></div>
           <div><strong>10+</strong><span>Years competing</span></div>
         </div>
@@ -51,10 +51,10 @@ export function Hero() {
           </div>
           <div className="rank-brief">
             <div className="brief-rank current-rank">
-              <RankIcon rank={ranks[4]} loading="eager" />
+              <RankIcon rank={ranks[3]} loading="eager" />
               <div>
                 <span className="micro-label">Current read</span>
-                <strong>DIAMOND III</strong>
+                <strong>PLATINUM III</strong>
               </div>
             </div>
             <svg className="promotion-arrow" viewBox="0 0 60 16" aria-hidden="true">

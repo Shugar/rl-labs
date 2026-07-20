@@ -105,6 +105,11 @@ export async function handleEliteAvailability(
     }
 
     const available = plan.stock;
+    if (available === null) {
+      sendJson(request, response, 502, { error: "whop_stock_not_visible" });
+      return;
+    }
+
     if (typeof available !== "number" || !Number.isInteger(available) || available < 0) {
       sendJson(request, response, 502, { error: "invalid_whop_stock" });
       return;
