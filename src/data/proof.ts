@@ -4,6 +4,7 @@ export type MemberReview = {
   initials: string;
   source: "Whop" | "Discord";
   quote: string;
+  spotlightQuote?: string;
   result: string;
   avatar?: string;
 };
@@ -33,6 +34,7 @@ export const memberReviews: MemberReview[] = [
     initials: "SJ",
     source: "Whop",
     quote: "Kinseh is pioneering the coaching scene through RL Labs, fostering a community of players all pushing each other to be the best versions of themselves. I've seen countless people improve well past what they thought was possible thanks to Kinseh's easy-to-follow lessons and easygoing gameplay conversations. Within just a week or two of joining Premium, I was able to finally push into SSL after being in GC3 for multiple years and feeling stuck. RL Labs is by far the best way to invest in yourself if you want to improve in Rocket League.",
+    spotlightQuote: "Within just a week or two of joining Premium, I was able to finally push into SSL after being in GC3 for multiple years and feeling stuck.",
     result: "GC3 → SSL",
     avatar: "/proof/avatars/sojh.gif",
   },

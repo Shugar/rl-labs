@@ -5,6 +5,7 @@ import { BroadcastTicker } from "./components/sections/BroadcastTicker";
 import { RankSystem } from "./components/sections/RankSystem";
 import { ProblemSection } from "./components/sections/ProblemSection";
 import { MethodSection } from "./components/sections/MethodSection";
+import { ResultSpotlight } from "./components/sections/ResultSpotlight";
 import { CoachSection } from "./components/sections/CoachSection";
 import { ProgramsSection } from "./components/sections/ProgramsSection";
 import { FitSection } from "./components/sections/FitSection";
@@ -85,10 +86,11 @@ function App() {
         <BroadcastTicker />
         <ProblemSection />
         <MethodSection />
+        <ResultSpotlight />
+        <ProgramsSection />
         <CoachSection />
         <RankSystem />
         <ProofSection />
-        <ProgramsSection />
         <FitSection />
         <FinalCta />
         <FaqSection />

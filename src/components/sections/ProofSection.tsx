@@ -131,7 +131,7 @@ export function ProofSection() {
     <section className="proof-section section-pad" id="proof">
       <div className="proof-heading" data-reveal>
         <div>
-          <p className="eyebrow dark-eyebrow">Results before pricing</p>
+          <p className="eyebrow dark-eyebrow">See the system at work</p>
           <KineticTitle
             lines={[
               { text: "The RL Labs" },

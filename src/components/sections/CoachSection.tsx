@@ -24,8 +24,8 @@ export function CoachSection() {
           <p className="eyebrow dark-eyebrow">Meet your coach</p>
           <KineticTitle
             lines={[
-              { text: "Former pro." },
-              { text: "25+ TIMES AT SSL.", accent: true },
+              { text: "Former Pro." },
+              { text: "25+ Times SSL.", accent: true },
             ]}
           />
           <p className="coach-lede">

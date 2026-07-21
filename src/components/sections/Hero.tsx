@@ -32,9 +32,9 @@ export function Hero() {
           </a>
         </div>
         <div className="hero-proof" aria-label="Coach credentials">
-          <div><strong>25+</strong><span>Times at SSL</span></div>
-          <div><strong>20K+</strong><span>Hours in-game</span></div>
-          <div><strong>10+</strong><span>Years competing</span></div>
+          <div aria-label="Pro Coaching"><strong>Pro</strong><span>Coaching</span></div>
+          <div aria-label="130+ Five-Star Reviews"><strong>130+</strong><span>Five-Star Reviews</span></div>
+          <div aria-label="1,000+ Students Coached"><strong>1,000+</strong><span>Students Coached</span></div>
         </div>
       </div>
 
@@ -54,7 +54,7 @@ export function Hero() {
               <RankIcon rank={ranks[3]} loading="eager" />
               <div>
                 <span className="micro-label">Current read</span>
-                <strong>PLATINUM III</strong>
+                <strong>PLATINUM I</strong>
               </div>
             </div>
             <svg className="promotion-arrow" viewBox="0 0 60 16" aria-hidden="true">

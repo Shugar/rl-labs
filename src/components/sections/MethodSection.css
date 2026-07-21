@@ -198,23 +198,23 @@
 .method-principle {
   display: flex;
   flex-direction: column;
-  gap: 9px;
-  padding: 17px 19px;
-  border-left: 2px solid var(--orange);
-  background: rgba(255, 92, 36, 0.075);
+  gap: 11px;
+  padding: 17px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .method-principle span {
-  color: var(--orange);
+  color: #777f8c;
   font-size: 9px;
 }
 
 .method-principle strong {
-  color: #d4d7dc;
+  max-width: 420px;
+  color: #c7cbd2;
   font-family: var(--display);
-  font-size: 11px;
-  font-weight: 540;
-  line-height: 1.55;
+  font-size: 12px;
+  font-weight: 520;
+  line-height: 1.6;
 }
 
 .tactics-board {
